@@ -12,6 +12,21 @@
 // Other flags: trace
 static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
 
+dispatch_sync_safe(dispatch_queue_t q,dispatch_block_t block) {
+    //to solve possible label conflicts you should use the specific key/value
+    //dispatch_queue_set_specific(serverQueue, "CocoaHTTPServerQueueKey",(void*)"CocoaHTTPServerQueueKey", NULL);
+    //dispatch_queue_get_specific(serverQueue, "CocoaHTTPServerQueueKey")
+    
+    char *currentQueueLabel = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL);
+    char *dispatchQueueLabel = dispatch_queue_get_label(q);
+    
+    if (strcmp(currentQueueLabel, dispatchQueueLabel) == 0) {
+        block();
+    } else {
+        dispatch_sync(q, block);
+    }
+}
+
 @interface HTTPServer (PrivateAPI)
 
 - (void)unpublishBonjour;
@@ -439,7 +454,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
 {
 	HTTPLogTrace();
 	
-	dispatch_sync(serverQueue, ^{ @autoreleasepool {
+	dispatch_sync_safe(serverQueue, ^{ @autoreleasepool {
 		
 		// First stop publishing the service via bonjour
 		[self unpublishBonjour];
