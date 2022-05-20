@@ -1,6 +1,7 @@
 #import <libxml/parser.h>
 
 #import "DAVResponse.h"
+#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 // WebDAV specifications: http://webdav.org/specs/rfc4918.html

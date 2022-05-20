@@ -1,5 +1,6 @@
 #import "HTTPFileResponse.h"
 #import "HTTPConnection.h"
+#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 #import <unistd.h>

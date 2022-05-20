@@ -1,6 +1,7 @@
 
 #import "MultipartFormDataParser.h"
 #import "DDData.h"
+#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 #pragma mark log level

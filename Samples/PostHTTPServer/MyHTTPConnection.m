@@ -2,6 +2,7 @@
 #import "HTTPMessage.h"
 #import "HTTPDataResponse.h"
 #import "DDNumber.h"
+#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 // Log levels : off, error, warn, info, verbose
