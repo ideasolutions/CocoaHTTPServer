@@ -1,5 +1,4 @@
 #import "MyHTTPConnection.h"
-#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 // Log levels : off, error, warn, info, verbose

@@ -1,6 +1,5 @@
 #import "MyHTTPConnection.h"
 #import "HTTPLogging.h"
-#define DD_LEGACY_MACROS 1
 #import "DDKeychain.h"
 
 // Log levels: off, error, warn, info, verbose

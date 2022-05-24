@@ -1,6 +1,5 @@
 #import "HTTPResponseTest.h"
 #import "HTTPConnection.h"
-#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 // Does ARC support support GCD objects?

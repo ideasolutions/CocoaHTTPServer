@@ -5,7 +5,6 @@
 #import "PUTResponse.h"
 #import "DELETEResponse.h"
 #import "DAVResponse.h"
-#define DD_LEGACY_MACROS 1
 #import "HTTPLogging.h"
 
 #define HTTP_BODY_MAX_MEMORY_SIZE (1024 * 1024)
