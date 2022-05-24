@@ -12,7 +12,7 @@
 // Other flags: trace
 static const int httpLogLevel = HTTP_LOG_LEVEL_INFO; // | HTTP_LOG_FLAG_TRACE;
 
-dispatch_sync_safe(dispatch_queue_t q,dispatch_block_t block) {
+void dispatch_sync_safe(dispatch_queue_t q,dispatch_block_t block) {
     //to solve possible label conflicts you should use the specific key/value
     //dispatch_queue_set_specific(serverQueue, "CocoaHTTPServerQueueKey",(void*)"CocoaHTTPServerQueueKey", NULL);
     //dispatch_queue_get_specific(serverQueue, "CocoaHTTPServerQueueKey")
